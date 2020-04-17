@@ -1,0 +1,22 @@
+version: '2'
+services:
+  inventory-app:
+    image: inventory
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://inventory-postgresql:5432/Inventory
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      - SPRING_DATA_JEST_URI=http://inventory-elasticsearch:9200
+      - SPRING_ELASTICSEARCH_REST_URIS=http://inventory-elasticsearch:9200
+    ports:
+      - 8080:8080
+  inventory-postgresql:
+    extends:
+      file: postgresql.yml
+      service: inventory-postgresql
+  inventory-elasticsearch:
+    extends:
+      file: elasticsearch.yml
+      service: inventory-elasticsearch
