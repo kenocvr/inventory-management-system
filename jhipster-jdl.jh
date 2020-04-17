@@ -1,6 +1,6 @@
 entity Location{
 	locationName String,
-    image Blob,
+    image ImageBlob,
     tag String,
     qrCode Blob,
     barCode Blob
@@ -8,7 +8,7 @@ entity Location{
 
 entity Item{
 	itemName String,
-    image Blob,
+    image ImageBlob,
     tag String,
     qrCode Blob,
     barCode Blob
@@ -16,7 +16,7 @@ entity Item{
 }
 
 relationship OneToMany{
-	Location{item} to Item{car}
+	Location{item} to Item{location}
 }
 
 

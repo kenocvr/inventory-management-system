@@ -1,0 +1,28 @@
+{
+  "inventoryApp": {
+    "item": {
+      "home": {
+        "title": "Items",
+        "createLabel": "Item erstellen",
+        "createOrEditLabel": "Item erstellen oder bearbeiten",
+        "search": "Suche nach Item",
+        "notFound": "No Items found"
+      },
+      "created": "Item erstellt mit ID {{ param }}",
+      "updated": "Item aktualisiert mit ID {{ param }}",
+      "deleted": "Item gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Item {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Item"
+      },
+      "itemName": "Item Name",
+      "image": "Image",
+      "tag": "Tag",
+      "qrCode": "Qr Code",
+      "barCode": "Bar Code",
+      "car": "Car"
+    }
+  }
+}
