@@ -4,7 +4,6 @@ import { JhiDataUtils } from 'ng-jhipster';
 import { ViewEncapsulation } from '@angular/core';
 
 import { IItem } from 'app/shared/model/item.model';
-import { Console } from 'inspector';
 
 @Component({
   selector: 'jhi-item-detail',
@@ -40,10 +39,6 @@ export class ItemDetailComponent implements OnInit {
 
   // Scans the QR code
   onCodeResult(resultString: string): void {
-    /* eslint-disable no-console */
-    // console.log(JSON.parse(resultString));
-    console.log(resultString);
-
     this.qrResult = resultString;
   }
 
