@@ -58,6 +58,24 @@
                     class="btn btn-primary">
                 <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
             </button>
+
+            <div class="qr-scan-area">
+                <!-- This is the npm package in-charge of scanning the QR -->
+                <zxing-scanner
+                    #scanner
+                    [(device)]="currentDevice"
+                    (scanSuccess)="onCodeResult($event)"
+                    (permissionResponse)="onHasPermission($event)"
+                ></zxing-scanner>
+                <div class="qr-area">
+                    <div class="area"></div>
+                </div>
+            </div>
+
+            <div>
+                <p>{{qrResult}}</p>
+            </div>
+
         </div>
     </div>
 </div>

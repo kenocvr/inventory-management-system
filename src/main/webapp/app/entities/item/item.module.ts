@@ -7,9 +7,11 @@ import { ItemDetailComponent } from './item-detail.component';
 import { ItemUpdateComponent } from './item-update.component';
 import { ItemDeleteDialogComponent } from './item-delete-dialog.component';
 import { itemRoute } from './item.route';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { NgQrScannerModule } from 'angular2-qrscanner';
 
 @NgModule({
-  imports: [InventorySharedModule, RouterModule.forChild(itemRoute)],
+  imports: [InventorySharedModule, RouterModule.forChild(itemRoute), ZXingScannerModule, NgQrScannerModule],
   declarations: [ItemComponent, ItemDetailComponent, ItemUpdateComponent, ItemDeleteDialogComponent],
   entryComponents: [ItemDeleteDialogComponent]
 })
