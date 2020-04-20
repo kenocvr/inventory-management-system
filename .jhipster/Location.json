@@ -29,7 +29,7 @@
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "item",
-            "otherEntityRelationshipName": "car",
+            "otherEntityRelationshipName": "location",
             "relationshipName": "item"
         }
     ],

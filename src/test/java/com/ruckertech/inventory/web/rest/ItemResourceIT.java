@@ -408,21 +408,21 @@ public class ItemResourceIT {
 
     @Test
     @Transactional
-    public void getAllItemsByCarIsEqualToSomething() throws Exception {
+    public void getAllItemsByLocationIsEqualToSomething() throws Exception {
         // Initialize the database
         itemRepository.saveAndFlush(item);
-        Location car = LocationResourceIT.createEntity(em);
-        em.persist(car);
+        Location location = LocationResourceIT.createEntity(em);
+        em.persist(location);
         em.flush();
-        item.setCar(car);
+        item.setLocation(location);
         itemRepository.saveAndFlush(item);
-        Long carId = car.getId();
+        Long locationId = location.getId();
 
-        // Get all the itemList where car equals to carId
-        defaultItemShouldBeFound("carId.equals=" + carId);
+        // Get all the itemList where location equals to locationId
+        defaultItemShouldBeFound("locationId.equals=" + locationId);
 
-        // Get all the itemList where car equals to carId + 1
-        defaultItemShouldNotBeFound("carId.equals=" + (carId + 1));
+        // Get all the itemList where location equals to locationId + 1
+        defaultItemShouldNotBeFound("locationId.equals=" + (locationId + 1));
     }
 
     /**

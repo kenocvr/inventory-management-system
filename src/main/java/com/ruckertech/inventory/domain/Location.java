@@ -54,7 +54,7 @@ public class Location implements Serializable {
     @Column(name = "bar_code_content_type")
     private String barCodeContentType;
 
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "location")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Item> items = new HashSet<>();
 
@@ -182,13 +182,13 @@ public class Location implements Serializable {
 
     public Location addItem(Item item) {
         this.items.add(item);
-        item.setCar(this);
+        item.setLocation(this);
         return this;
     }
 
     public Location removeItem(Item item) {
         this.items.remove(item);
-        item.setCar(null);
+        item.setLocation(null);
         return this;
     }
 

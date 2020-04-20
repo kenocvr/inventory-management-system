@@ -101,9 +101,9 @@ public class ItemQueryService extends QueryService<Item> {
             if (criteria.getTag() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getTag(), Item_.tag));
             }
-            if (criteria.getCarId() != null) {
-                specification = specification.and(buildSpecification(criteria.getCarId(),
-                    root -> root.join(Item_.car, JoinType.LEFT).get(Location_.id)));
+            if (criteria.getLocationId() != null) {
+                specification = specification.and(buildSpecification(criteria.getLocationId(),
+                    root -> root.join(Item_.location, JoinType.LEFT).get(Location_.id)));
             }
         }
         return specification;

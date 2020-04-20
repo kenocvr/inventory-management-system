@@ -55,7 +55,7 @@ public class Item implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("items")
-    private Location car;
+    private Location location;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -170,17 +170,17 @@ public class Item implements Serializable {
         this.barCodeContentType = barCodeContentType;
     }
 
-    public Location getCar() {
-        return car;
+    public Location getLocation() {
+        return location;
     }
 
-    public Item car(Location location) {
-        this.car = location;
+    public Item location(Location location) {
+        this.location = location;
         return this;
     }
 
-    public void setCar(Location location) {
-        this.car = location;
+    public void setLocation(Location location) {
+        this.location = location;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

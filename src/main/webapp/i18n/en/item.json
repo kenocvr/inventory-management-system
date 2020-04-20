@@ -22,7 +22,7 @@
       "tag": "Tag",
       "qrCode": "Qr Code",
       "barCode": "Bar Code",
-      "car": "Car"
+      "location": "Location"
     }
   }
 }

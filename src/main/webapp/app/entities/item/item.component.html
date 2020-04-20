@@ -46,7 +46,7 @@
                     <th scope="col" ><span jhiTranslate="inventoryApp.item.tag">Tag</span></th>
                     <th scope="col" ><span jhiTranslate="inventoryApp.item.qrCode">Qr Code</span></th>
                     <th scope="col" ><span jhiTranslate="inventoryApp.item.barCode">Bar Code</span></th>
-                    <th scope="col" ><span jhiTranslate="inventoryApp.item.car">Car</span></th>
+                    <th scope="col" ><span jhiTranslate="inventoryApp.item.location">Location</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -70,8 +70,8 @@
                         <span *ngIf="item.barCode">{{ item.barCodeContentType }}, {{ byteSize(item.barCode) }}</span>
                     </td>
                     <td>
-                        <div *ngIf="item.carId">
-                            <a [routerLink]="['/location', item.carId , 'view']" >{{ item.carId }}</a>
+                        <div *ngIf="item.locationId">
+                            <a [routerLink]="['/location', item.locationId , 'view']" >{{ item.locationId }}</a>
                         </div>
                     </td>
                     <td class="text-right">

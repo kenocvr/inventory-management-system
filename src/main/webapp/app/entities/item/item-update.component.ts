@@ -30,7 +30,7 @@ export class ItemUpdateComponent implements OnInit {
     qrCodeContentType: [],
     barCode: [],
     barCodeContentType: [],
-    carId: []
+    locationId: []
   });
 
   constructor(
@@ -62,7 +62,7 @@ export class ItemUpdateComponent implements OnInit {
       qrCodeContentType: item.qrCodeContentType,
       barCode: item.barCode,
       barCodeContentType: item.barCodeContentType,
-      carId: item.carId
+      locationId: item.locationId
     });
   }
 
@@ -118,7 +118,7 @@ export class ItemUpdateComponent implements OnInit {
       qrCode: this.editForm.get(['qrCode'])!.value,
       barCodeContentType: this.editForm.get(['barCodeContentType'])!.value,
       barCode: this.editForm.get(['barCode'])!.value,
-      carId: this.editForm.get(['carId'])!.value
+      locationId: this.editForm.get(['locationId'])!.value
     };
   }
 

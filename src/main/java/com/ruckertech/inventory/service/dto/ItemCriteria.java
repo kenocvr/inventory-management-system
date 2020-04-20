@@ -30,7 +30,7 @@ public class ItemCriteria implements Serializable, Criteria {
 
     private StringFilter tag;
 
-    private LongFilter carId;
+    private LongFilter locationId;
 
     public ItemCriteria() {
     }
@@ -39,7 +39,7 @@ public class ItemCriteria implements Serializable, Criteria {
         this.id = other.id == null ? null : other.id.copy();
         this.itemName = other.itemName == null ? null : other.itemName.copy();
         this.tag = other.tag == null ? null : other.tag.copy();
-        this.carId = other.carId == null ? null : other.carId.copy();
+        this.locationId = other.locationId == null ? null : other.locationId.copy();
     }
 
     @Override
@@ -71,12 +71,12 @@ public class ItemCriteria implements Serializable, Criteria {
         this.tag = tag;
     }
 
-    public LongFilter getCarId() {
-        return carId;
+    public LongFilter getLocationId() {
+        return locationId;
     }
 
-    public void setCarId(LongFilter carId) {
-        this.carId = carId;
+    public void setLocationId(LongFilter locationId) {
+        this.locationId = locationId;
     }
 
 
@@ -93,7 +93,7 @@ public class ItemCriteria implements Serializable, Criteria {
             Objects.equals(id, that.id) &&
             Objects.equals(itemName, that.itemName) &&
             Objects.equals(tag, that.tag) &&
-            Objects.equals(carId, that.carId);
+            Objects.equals(locationId, that.locationId);
     }
 
     @Override
@@ -102,7 +102,7 @@ public class ItemCriteria implements Serializable, Criteria {
         id,
         itemName,
         tag,
-        carId
+        locationId
         );
     }
 
@@ -112,7 +112,7 @@ public class ItemCriteria implements Serializable, Criteria {
                 (id != null ? "id=" + id + ", " : "") +
                 (itemName != null ? "itemName=" + itemName + ", " : "") +
                 (tag != null ? "tag=" + tag + ", " : "") +
-                (carId != null ? "carId=" + carId + ", " : "") +
+                (locationId != null ? "locationId=" + locationId + ", " : "") +
             "}";
     }
 

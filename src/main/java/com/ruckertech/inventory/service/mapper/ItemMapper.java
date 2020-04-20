@@ -12,10 +12,10 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {LocationMapper.class})
 public interface ItemMapper extends EntityMapper<ItemDTO, Item> {
 
-    @Mapping(source = "car.id", target = "carId")
+    @Mapping(source = "location.id", target = "locationId")
     ItemDTO toDto(Item item);
 
-    @Mapping(source = "carId", target = "car")
+    @Mapping(source = "locationId", target = "location")
     Item toEntity(ItemDTO itemDTO);
 
     default Item fromId(Long id) {

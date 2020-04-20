@@ -28,7 +28,7 @@ public class ItemDTO implements Serializable {
 
     private String barCodeContentType;
 
-    private Long carId;
+    private Long locationId;
     
     public Long getId() {
         return id;
@@ -102,12 +102,12 @@ public class ItemDTO implements Serializable {
         this.barCodeContentType = barCodeContentType;
     }
 
-    public Long getCarId() {
-        return carId;
+    public Long getLocationId() {
+        return locationId;
     }
 
-    public void setCarId(Long locationId) {
-        this.carId = locationId;
+    public void setLocationId(Long locationId) {
+        this.locationId = locationId;
     }
 
     @Override
@@ -140,7 +140,7 @@ public class ItemDTO implements Serializable {
             ", tag='" + getTag() + "'" +
             ", qrCode='" + getQrCode() + "'" +
             ", barCode='" + getBarCode() + "'" +
-            ", carId=" + getCarId() +
+            ", locationId=" + getLocationId() +
             "}";
     }
 }

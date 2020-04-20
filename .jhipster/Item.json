@@ -30,7 +30,7 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "location",
             "otherEntityRelationshipName": "item",
-            "relationshipName": "car",
+            "relationshipName": "location",
             "otherEntityField": "id"
         }
     ],

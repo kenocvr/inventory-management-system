@@ -8,7 +8,7 @@ export interface IItem {
   qrCode?: any;
   barCodeContentType?: string;
   barCode?: any;
-  carId?: number;
+  locationId?: number;
 }
 
 export class Item implements IItem {
@@ -22,6 +22,6 @@ export class Item implements IItem {
     public qrCode?: any,
     public barCodeContentType?: string,
     public barCode?: any,
-    public carId?: number
+    public locationId?: number
   ) {}
 }
