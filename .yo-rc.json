@@ -40,6 +40,10 @@
     "languages": ["en", "fr", "de", "it", "es"],
     "blueprints": [],
     "herokuAppName": "shrouded-ravine-77778",
-    "herokuDeployType": "git"
+    "herokuDeployType": "git",
+    "appsFolders": ["Inventory"],
+    "directoryPath": "../",
+    "monitoring": "no",
+    "consoleOptions": []
   }
 }

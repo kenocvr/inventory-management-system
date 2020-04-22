@@ -1,0 +1,26 @@
+{
+  "apps": [
+    {
+      "baseName": "Inventory",
+      "performance": "high",
+      "fargate": { "CPU": "4096", "memory": "16GB", "taskCount": 1 },
+      "database": { "size": "db.r4.large", "supportedEngines": ["mariadb", "mysql", "postgresql"], "instances": 1 },
+      "scaling": "low",
+      "dbType": "postgresql",
+      "auroraEngine": "aurora-postgresql",
+      "auroraFamily": "aurora-postgresql9.6",
+      "auroraClusterParameterGroupName": "default.aurora-postgresql9.6",
+      "auroraDbParam": "check_function_bodies: 0"
+    }
+  ],
+  "vpc": {
+    "id": "vpc-b42240cc",
+    "cidr": "172.31.0.0/16",
+    "elbSubnets": ["subnet-e06c2acb", "subnet-78995725"],
+    "appSubnets": ["subnet-e06c2acb", "subnet-78995725"],
+    "appSubnetsLaunchWithPublicIP": true
+  },
+  "region": "us-west-2",
+  "cloudFormationName": "inventorymanager",
+  "s3BucketName": "inventorymanager-1587527253644"
+}

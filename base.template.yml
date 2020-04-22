@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  applicationStackS3Bucket:
+    Type: String
+    Description: Name of the S3 bucket containing the application.template.yml template file
+    Default: inventorymanager-1587527253644
+  InventoryDBPassword:
+    Type: String
+    Description: Aurora master database password for Inventory
+    NoEcho: true
+
+  shouldDeployService:
+    Type: String
+    Description: Should the ECS service be initialised
+    AllowedValues:
+      - true
+      - false
+    Default: false
+Resources:
+  Inventory:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      Parameters:
+        parentStackName: !Ref AWS::StackName
+        repositoryName: inventorymanager/inventory
+        shouldDeployService: !Ref shouldDeployService
+        databasePassword: !Ref InventoryDBPassword
+      TemplateURL: !Join ['', ['https://s3.amazonaws.com/', !Ref applicationStackS3Bucket, '/Inventory.template.yml']]
+
+Outputs:
+  LoadBalancerOutputInventory:
+    Description: The external DNS address of the load-balancers
+    Value: !GetAtt Inventory.Outputs.LoadBalancerOutput
